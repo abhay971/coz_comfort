@@ -11,17 +11,25 @@ const Hero = () => {
     const handleScroll = () => setScrollY(window.scrollY)
     window.addEventListener('scroll', handleScroll)
     
-    // Counting animation
+    // Ultra-simple counting animation - no stuttering
     const timer = setTimeout(() => {
-      const interval = setInterval(() => {
-        setCount(prev => {
-          if (prev >= 500) {
-            clearInterval(interval)
-            return 500
-          }
-          return prev + 10
-        })
-      }, 30)
+      let current = 0
+      const target = 500
+      const increment = 5 // Larger increments
+      const interval = 20 // Faster intervals
+      
+      const countUp = setInterval(() => {
+        current += increment
+        if (current >= target) {
+          setCount(target)
+          clearInterval(countUp)
+        } else {
+          setCount(current)
+        }
+      }, interval)
+      
+      // Cleanup function
+      return () => clearInterval(countUp)
     }, 1500) // Start after 1.5s delay
     
     return () => {
@@ -172,7 +180,7 @@ const Hero = () => {
                 
                 <div className="text-center relative z-10">
                   <div className="relative mb-2">
-                    <div className="text-white text-5xl font-black tracking-wider transform hover:scale-105 transition-transform duration-300" 
+                    <div className="text-white text-5xl font-black tracking-wider transform hover:scale-105 transition-all duration-100 ease-out" 
                          style={{fontFamily: 'Arial Black, "Arial Bold", Gadget, sans-serif', letterSpacing: '0.05em'}}>
                       <span className="relative" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.3)'}}>
                         {count}
