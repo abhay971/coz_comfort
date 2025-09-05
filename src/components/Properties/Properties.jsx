@@ -85,11 +85,11 @@ const Properties = () => {
       <section 
         id="projects-section"
         ref={el => sectionsRef.current[0] = el}
-        className="min-h-screen bg-black text-white relative overflow-hidden"
+        className="min-h-screen bg-white text-gray-800 relative overflow-hidden"
         style={{overflowX: 'hidden'}}
       >
         <div className="absolute inset-0" style={{
-          backgroundImage: 'linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 25%, #0d1117 50%, #161b22 75%, #0f0f0f 100%)',
+          backgroundImage: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 25%, #dee2e6 50%, #ced4da 75%, #f8f9fa 100%)',
           backgroundSize: '400% 400%',
           animation: 'gradientShift 20s ease infinite'
         }}></div>
@@ -110,7 +110,7 @@ const Properties = () => {
                   <div className="text-sm font-medium tracking-wider text-[#F37E3A] uppercase mb-4">
                     (OUR PROJECTS)
                   </div>
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light leading-tight" style={{fontFamily: 'Georgia, serif'}}>
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light leading-tight text-gray-800" style={{fontFamily: 'Georgia, serif'}}>
                     FEATURED<br />
                     INDUSTRIAL<br />
                     <em>PROPERTIES</em>
@@ -148,16 +148,16 @@ const Properties = () => {
                   <div className="absolute bottom-8 left-8 right-8">
                     <div className="mb-4">
                       <div className="text-4xl font-bold mb-2" style={{color: '#F37E3A'}}>(1)</div>
-                      <h3 className="text-3xl lg:text-4xl font-light mb-2" style={{fontFamily: 'Georgia, serif'}}>
+                      <h3 className="text-3xl lg:text-4xl font-light mb-2 text-white" style={{fontFamily: 'Georgia, serif'}}>
                         LUMIERE DUPLEX<br />
                         RESIDENCES
                       </h3>
-                      <p className="text-white/80 text-sm mb-4 max-w-md">
+                      <p className="text-white/90 text-sm mb-4 max-w-md">
                         Designing luxury apartments that features spacious layouts with quality amenities.
                       </p>
                     </div>
                     
-                    <button className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-white/20 transition-all duration-300">
+                    <button className="bg-white/20 border-white/30 text-white hover:bg-white/30 backdrop-blur-sm border px-6 py-2 rounded-full text-sm font-medium transition-all duration-300">
                       VIEW PROJECT
                     </button>
                   </div>
@@ -186,11 +186,11 @@ const Properties = () => {
                       <div className="text-lg font-bold mb-1" style={{color: property.color}}>
                         {property.number}
                       </div>
-                      <h4 className="text-lg font-light mb-2" style={{fontFamily: 'Georgia, serif'}}>
+                      <h4 className="text-lg font-light mb-2 text-white" style={{fontFamily: 'Georgia, serif'}}>
                         {property.title.split(' ').slice(0, 2).join(' ')}<br />
                         {property.title.split(' ').slice(2).join(' ')}
                       </h4>
-                      <p className="text-white/70 text-xs">
+                      <p className="text-white/80 text-xs">
                         {property.description.substring(0, 60)}...
                       </p>
                     </div>
@@ -207,10 +207,10 @@ const Properties = () => {
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`relative text-xs sm:text-sm font-light tracking-wider uppercase transition-all duration-300 px-2 py-1 ${
+                  className={`relative text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 px-2 py-1 ${
                     activeCategory === category.id 
-                      ? 'text-white' 
-                      : 'text-gray-500 hover:text-gray-300'
+                      ? 'text-gray-800' 
+                      : 'text-gray-600 hover:text-gray-800'
                   }`}
                 >
                   {category.label}
@@ -231,7 +231,7 @@ const Properties = () => {
       <section 
         id="cta-section"
         ref={el => sectionsRef.current[1] = el}
-        className="min-h-screen bg-black text-white relative overflow-hidden flex items-center"
+        className="min-h-screen bg-white text-gray-800 relative overflow-hidden flex items-center"
       >
         <div className="absolute inset-0">
           <img 
@@ -239,7 +239,7 @@ const Properties = () => {
             alt="Contact Background" 
             className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-white/90"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-16 text-center">
@@ -249,12 +249,12 @@ const Properties = () => {
             <div className="text-sm font-medium tracking-wider text-[#F37E3A] uppercase mb-8">
               (READY TO BEGIN?)
             </div>
-            <h2 className="text-5xl lg:text-7xl font-light leading-tight mb-8" style={{fontFamily: 'Georgia, serif'}}>
+            <h2 className="text-5xl lg:text-7xl font-light leading-tight mb-8 text-gray-800" style={{fontFamily: 'Georgia, serif'}}>
               READY TO FIND<br />
               YOUR PERFECT<br />
               <em>INDUSTRIAL SPACE</em>?
             </h2>
-            <p className="text-white/80 text-lg leading-relaxed mb-12 max-w-2xl mx-auto">
+            <p className="text-gray-600 text-lg leading-relaxed mb-12 max-w-2xl mx-auto">
               Let our experts help you discover the ideal industrial property that aligns with your business vision and operational requirements.
             </p>
             
@@ -262,7 +262,7 @@ const Properties = () => {
               <button className="bg-gradient-to-r from-[#F37E3A] to-[#e66a2b] text-white px-12 py-4 rounded-full font-medium tracking-wider uppercase hover:shadow-2xl hover:shadow-[#F37E3A]/25 transition-all duration-300 transform hover:scale-105 hover:from-[#e66a2b] hover:to-[#d4581f]">
                 SCHEDULE CONSULTATION
               </button>
-              <button className="border border-white/30 text-white px-12 py-4 rounded-full font-medium tracking-wider uppercase hover:bg-white/10 hover:border-white/50 transition-all duration-300 transform hover:scale-105">
+              <button className="border border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-12 py-4 rounded-full font-medium tracking-wider uppercase transition-all duration-300 transform hover:scale-105">
                 VIEW ALL PROPERTIES
               </button>
             </div>

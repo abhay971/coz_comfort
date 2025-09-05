@@ -40,7 +40,7 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen pt-20 lg:pt-24 pb-16 lg:pb-20 px-4 lg:px-8 flex items-center relative overflow-hidden" style={{
-      background: 'linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 25%, #0d1117 50%, #161b22 75%, #0f0f0f 100%)',
+      background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 25%, #f1f5f9 50%, #e2e8f0 75%, #ffffff 100%)',
       backgroundSize: '400% 400%',
       animation: 'gradientShift 20s ease infinite'
     }}>
@@ -66,13 +66,14 @@ const Hero = () => {
                 isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
               }`}
               style={{
-                background: 'linear-gradient(135deg, #1e293b 0%, #334155 100%)',
-                boxShadow: '0 25px 50px -12px rgba(30, 41, 59, 0.4)'
+                background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+                boxShadow: '0 25px 50px -12px rgba(100, 116, 139, 0.1)',
+                border: '1px solid #e2e8f0'
               }}
             >
               {/* Just Industry 360° */}
               <div className="text-center">
-                <div className="text-white text-6xl lg:text-7xl font-light tracking-wider">
+                <div className="text-gray-800 text-6xl lg:text-7xl font-light tracking-wider">
                   Industry <span className="font-normal">360</span><span className="text-4xl align-super">°</span>
                 </div>
               </div>
@@ -122,8 +123,9 @@ const Hero = () => {
                 isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
               }`}
               style={{
-                background: 'linear-gradient(135deg, #6EBD49 20%, #5da83d 100%)',
-                boxShadow: '0 25px 50px -12px rgba(110, 189, 73, 0.3)'
+                background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+                boxShadow: '0 25px 50px -12px rgba(132, 204, 22, 0.1)',
+                border: '1px solid #e2e8f0'
               }}
             >
               {/* Main Video Area */}
@@ -168,27 +170,28 @@ const Hero = () => {
                   isLoaded ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
                 }`}
                 style={{
-                  background: 'linear-gradient(135deg, #288EC2 0%, #1e7aa1 100%)',
-                  boxShadow: '0 25px 50px -12px rgba(40, 142, 194, 0.4)'
+                  background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+                  boxShadow: '0 25px 50px -12px rgba(14, 165, 233, 0.1)',
+                  border: '1px solid #e2e8f0'
                 }}
               >
                 {/* Animated background pattern */}
                 <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-4 left-4 w-2 h-2 bg-white rounded-full animate-ping"></div>
-                  <div className="absolute bottom-4 right-4 w-1 h-1 bg-white rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                  <div className="absolute top-4 left-4 w-2 h-2 bg-gray-400 rounded-full animate-ping"></div>
+                  <div className="absolute bottom-4 right-4 w-1 h-1 bg-gray-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
                 </div>
                 
                 <div className="text-center relative z-10">
                   <div className="relative mb-2">
-                    <div className="text-white text-5xl font-black tracking-wider transform hover:scale-105 transition-all duration-100 ease-out" 
+                    <div className="text-gray-800 text-5xl font-black tracking-wider transform hover:scale-105 transition-all duration-100 ease-out" 
                          style={{fontFamily: 'Arial Black, "Arial Bold", Gadget, sans-serif', letterSpacing: '0.05em'}}>
                       <span className="relative" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.3)'}}>
                         {count}
-                        <span className="text-white ml-1">+</span>
+                        <span className="text-gray-800 ml-1">+</span>
                       </span>
                     </div>
                   </div>
-                  <div className="text-white/90 text-sm font-bold tracking-[0.25em] uppercase" 
+                  <div className="text-gray-700 text-sm font-bold tracking-[0.25em] uppercase" 
                        style={{fontFamily: 'Arial, Helvetica, sans-serif'}}>
                     Projects
                   </div>
@@ -201,7 +204,7 @@ const Hero = () => {
                   isLoaded ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
                 }`}
                 style={{
-                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4)'
+                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1)'
                 }}
               >
                 {/* Full Background Image */}

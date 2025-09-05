@@ -98,13 +98,12 @@ const Footer = () => {
       <section
         id="contact-section"
         ref={(el) => (sectionsRef.current[0] = el)}
-        className="min-h-screen bg-black text-white relative overflow-hidden"
+        className="min-h-screen bg-white text-gray-800 relative overflow-hidden"
       >
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage:
-              "linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 25%, #0d1117 50%, #161b22 75%, #0f0f0f 100%)",
+            backgroundImage: "linear-gradient(135deg, #f8f9fa 0%, #e9ecef 25%, #dee2e6 50%, #ced4da 75%, #f8f9fa 100%)",
             backgroundSize: "400% 400%",
             animation: "gradientShift 20s ease infinite",
           }}
@@ -117,7 +116,9 @@ const Footer = () => {
             alt="Contact Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/90"></div>
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-white/90"
+          ></div>
         </div>
 
         {/* Sophisticated decorative elements */}
@@ -152,7 +153,9 @@ const Footer = () => {
                   <br />
                   <em>INDUSTRIAL SPACE</em>?
                 </h2>
-                <p className="text-white/80 text-lg leading-relaxed mb-12 max-w-md">
+                <p
+                  className="text-gray-600 text-lg leading-relaxed mb-12 max-w-md"
+                >
                   Let our experts help you discover the ideal industrial
                   property that aligns with your business vision and operational
                   requirements.
@@ -171,10 +174,14 @@ const Footer = () => {
                       </svg>
                     </div>
                     <div>
-                      <div className="font-light text-white/60 text-sm tracking-wider uppercase mb-1">
+                      <div
+                        className="font-light text-gray-500 text-sm tracking-wider uppercase mb-1"
+                      >
                         Phone
                       </div>
-                      <div className="text-white font-medium text-lg">
+                      <div
+                        className="text-gray-800 font-medium text-lg"
+                      >
                         +1 (555) 123-4567
                       </div>
                     </div>
@@ -192,10 +199,14 @@ const Footer = () => {
                       </svg>
                     </div>
                     <div>
-                      <div className="font-light text-white/60 text-sm tracking-wider uppercase mb-1">
+                      <div
+                        className="font-light text-gray-500 text-sm tracking-wider uppercase mb-1"
+                      >
                         Email
                       </div>
-                      <div className="text-white font-medium text-lg">
+                      <div
+                        className="text-gray-800 font-medium text-lg"
+                      >
                         info@cozcomfort.com
                       </div>
                     </div>
@@ -213,10 +224,14 @@ const Footer = () => {
                       </svg>
                     </div>
                     <div>
-                      <div className="font-light text-white/60 text-sm tracking-wider uppercase mb-1">
+                      <div
+                        className="font-light text-gray-500 text-sm tracking-wider uppercase mb-1"
+                      >
                         Address
                       </div>
-                      <div className="text-white font-medium text-lg">
+                      <div
+                        className="text-gray-800 font-medium text-lg"
+                      >
                         123 Industrial Blvd, Business District
                       </div>
                     </div>
@@ -232,12 +247,14 @@ const Footer = () => {
                     : "opacity-0 translate-x-20"
                 }`}
               >
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-8 lg:p-12 rounded-3xl">
+                <div
+                  className="bg-white/90 border-gray-200 backdrop-blur-sm border p-8 lg:p-12 rounded-3xl shadow-lg"
+                >
                   <div className="text-sm font-medium tracking-wider text-[#288EC2] uppercase mb-6">
                     (CONTACT FORM)
                   </div>
                   <h3
-                    className="text-3xl font-light text-white mb-8"
+                    className="text-3xl font-light text-gray-800 mb-8"
                     style={{ fontFamily: "Georgia, serif" }}
                   >
                     GET IN <em>TOUCH</em>
@@ -245,61 +262,71 @@ const Footer = () => {
                   <form className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-light text-white/80 tracking-wider uppercase mb-3">
+                        <label
+                          className="block text-sm font-light text-gray-600 tracking-wider uppercase mb-3"
+                        >
                           First Name
                         </label>
                         <input
                           type="text"
-                          className="w-full px-6 py-4 bg-white/5 border border-white/20 rounded-2xl text-white placeholder-white/50 focus:ring-2 focus:ring-[#F37E3A] focus:border-[#F37E3A] focus:bg-white/10 transition-all duration-300"
+                          className="w-full px-6 py-4 bg-gray-50 border-gray-200 text-gray-800 placeholder-gray-400 focus:bg-white border rounded-2xl focus:ring-2 focus:ring-[#F37E3A] focus:border-[#F37E3A] transition-all duration-300"
                           placeholder="John"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-light text-white/80 tracking-wider uppercase mb-3">
+                        <label
+                          className="block text-sm font-light text-gray-600 tracking-wider uppercase mb-3"
+                        >
                           Last Name
                         </label>
                         <input
                           type="text"
-                          className="w-full px-6 py-4 bg-white/5 border border-white/20 rounded-2xl text-white placeholder-white/50 focus:ring-2 focus:ring-[#F37E3A] focus:border-[#F37E3A] focus:bg-white/10 transition-all duration-300"
+                          className="w-full px-6 py-4 bg-gray-50 border-gray-200 text-gray-800 placeholder-gray-400 focus:bg-white border rounded-2xl focus:ring-2 focus:ring-[#F37E3A] focus:border-[#F37E3A] transition-all duration-300"
                           placeholder="Doe"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-light text-white/80 tracking-wider uppercase mb-3">
+                      <label className="block text-sm font-light text-gray-600 tracking-wider uppercase mb-3">
                         Email
                       </label>
                       <input
                         type="email"
-                        className="w-full px-6 py-4 bg-white/5 border border-white/20 rounded-2xl text-white placeholder-white/50 focus:ring-2 focus:ring-[#F37E3A] focus:border-[#F37E3A] focus:bg-white/10 transition-all duration-300"
+                        className="w-full px-6 py-4 bg-gray-50 border-gray-200 text-gray-800 placeholder-gray-400 focus:bg-white border rounded-2xl focus:ring-2 focus:ring-[#F37E3A] focus:border-[#F37E3A] transition-all duration-300"
                         placeholder="john@company.com"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-light text-white/80 tracking-wider uppercase mb-3">
+                      <label className="block text-sm font-light text-gray-600 tracking-wider uppercase mb-3">
                         Property Type
                       </label>
-                      <select className="w-full px-6 py-4 bg-white/5 border border-white/20 rounded-2xl text-white focus:ring-2 focus:ring-[#F37E3A] focus:border-[#F37E3A] focus:bg-white/10 transition-all duration-300">
-                        <option className="bg-black">
+                      <select
+                        className="w-full px-6 py-4 bg-gray-50 border-gray-200 text-gray-800 focus:bg-white border rounded-2xl focus:ring-2 focus:ring-[#F37E3A] focus:border-[#F37E3A] transition-all duration-300"
+                      >
+                        <option className="bg-white">
                           Manufacturing Facility
                         </option>
-                        <option className="bg-black">Warehouse Space</option>
-                        <option className="bg-black">
+                        <option className="bg-white">
+                          Warehouse Space
+                        </option>
+                        <option className="bg-white">
                           Distribution Center
                         </option>
-                        <option className="bg-black">Other</option>
+                        <option className="bg-white">
+                          Other
+                        </option>
                       </select>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-light text-white/80 tracking-wider uppercase mb-3">
+                      <label className="block text-sm font-light text-gray-600 tracking-wider uppercase mb-3">
                         Message
                       </label>
                       <textarea
                         rows="4"
-                        className="w-full px-6 py-4 bg-white/5 border border-white/20 rounded-2xl text-white placeholder-white/50 focus:ring-2 focus:ring-[#F37E3A] focus:border-[#F37E3A] focus:bg-white/10 transition-all duration-300"
+                        className="w-full px-6 py-4 bg-gray-50 border-gray-200 text-gray-800 placeholder-gray-400 focus:bg-white border rounded-2xl focus:ring-2 focus:ring-[#F37E3A] focus:border-[#F37E3A] transition-all duration-300"
                         placeholder="Tell us about your requirements..."
                       ></textarea>
                     </div>
@@ -322,7 +349,7 @@ const Footer = () => {
       <footer
         id="footer-section"
         ref={(el) => (sectionsRef.current[1] = el)}
-        className="bg-black text-white py-16 relative"
+        className="bg-gray-100 text-gray-800 py-16 relative"
       >
         <div className="absolute inset-0 opacity-5">
           <img
@@ -348,7 +375,9 @@ const Footer = () => {
                   className="h-12 w-auto"
                 />
               </div>
-              <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-md">
+              <p
+                className="text-gray-600 text-lg leading-relaxed mb-8 max-w-md"
+              >
                 Your trusted partner for premium industrial real estate
                 solutions. We help businesses find the perfect space to grow and
                 thrive.
@@ -360,7 +389,7 @@ const Footer = () => {
                   <a
                     key={index}
                     href="#"
-                    className="w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl flex items-center justify-center text-white hover:scale-110 hover:bg-white/20 transition-all duration-300 group"
+                    className="w-12 h-12 bg-white border-gray-200 text-gray-600 hover:bg-gray-50 backdrop-blur-sm border rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 group"
                     style={{ "--hover-color": social.color }}
                   >
                     <div
@@ -382,7 +411,7 @@ const Footer = () => {
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <h3
-                  className="font-light text-white text-xl tracking-wider uppercase mb-6"
+                  className="font-light text-gray-800 text-xl tracking-wider uppercase mb-6"
                   style={{ fontFamily: "Georgia, serif" }}
                 >
                   {section.title}
@@ -392,7 +421,7 @@ const Footer = () => {
                     <li key={linkIndex}>
                       <a
                         href="#"
-                        className="text-white/60 hover:text-[#F37E3A] transition-all duration-300 text-sm font-light tracking-wide hover:translate-x-2 inline-block"
+                        className="text-gray-500 hover:text-[#F37E3A] transition-all duration-300 text-sm font-light tracking-wide hover:translate-x-2 inline-block"
                       >
                         {link}
                       </a>
@@ -404,27 +433,31 @@ const Footer = () => {
           </div>
 
           {/* Bottom Section */}
-          <div className="border-t border-white/20 mt-16 pt-8">
+          <div
+            className="border-t border-gray-300 mt-16 pt-8"
+          >
             <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="text-white/60 mb-4 md:mb-0 text-sm font-light tracking-wider">
+              <div
+                className="text-gray-500 mb-4 md:mb-0 text-sm font-light tracking-wider"
+              >
                 © 2024 COZ COMFORT. ALL RIGHTS RESERVED.
               </div>
               <div className="flex space-x-8">
                 <a
                   href="#"
-                  className="text-white/60 hover:text-[#F37E3A] transition-all duration-300 text-sm font-light tracking-wider hover:translate-y-[-2px] inline-block"
+                  className="text-gray-500 hover:text-[#F37E3A] transition-all duration-300 text-sm font-light tracking-wider hover:translate-y-[-2px] inline-block"
                 >
                   Privacy Policy
                 </a>
                 <a
                   href="#"
-                  className="text-white/60 hover:text-[#F37E3A] transition-all duration-300 text-sm font-light tracking-wider hover:translate-y-[-2px] inline-block"
+                  className="text-gray-500 hover:text-[#F37E3A] transition-all duration-300 text-sm font-light tracking-wider hover:translate-y-[-2px] inline-block"
                 >
                   Terms of Service
                 </a>
                 <a
                   href="#"
-                  className="text-white/60 hover:text-[#F37E3A] transition-all duration-300 text-sm font-light tracking-wider hover:translate-y-[-2px] inline-block"
+                  className="text-gray-500 hover:text-[#F37E3A] transition-all duration-300 text-sm font-light tracking-wider hover:translate-y-[-2px] inline-block"
                 >
                   Cookie Policy
                 </a>
