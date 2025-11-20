@@ -27,21 +27,32 @@ const Footer = () => {
 
   const footerSections = [
     {
-      title: "Navigation",
+      title: "Quick Links",
       links: [
-        { name: "Home", href: "#home" },
-        { name: "About", href: "#about" },
+        { name: "About Us", href: "#about-section" },
+        { name: "Our Process", href: "#process" },
+        { name: "Offerings", href: "#offerings" },
         { name: "Projects", href: "#projects" },
         { name: "Contact", href: "#contact" },
       ],
     },
     {
-      title: "Services",
+      title: "Our Services",
       links: [
-        { name: "Manufacturing Facilities", href: "#projects" },
-        { name: "Warehouse Solutions", href: "#projects" },
-        { name: "Distribution Centers", href: "#projects" },
-        { name: "Industrial Parks", href: "#projects" },
+        { name: "Compliance Management", href: "#offerings" },
+        { name: "Amenities Management", href: "#offerings" },
+        { name: "Facilities Management", href: "#offerings" },
+        { name: "Warehousing & Distribution", href: "#offerings" },
+        { name: "Global Business Expansion", href: "#offerings" },
+      ],
+    },
+    {
+      title: "Project Types",
+      links: [
+        { name: "Manufacturing Hub", href: "#projects" },
+        { name: "Warehouse Complex", href: "#projects" },
+        { name: "Distribution Center", href: "#projects" },
+        { name: "Industrial Park", href: "#projects" },
       ],
     },
   ];
@@ -95,7 +106,7 @@ const Footer = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`grid lg:grid-cols-4 md:grid-cols-2 gap-8 lg:gap-12 transition-all duration-1000 ${
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 transition-all duration-1000 ${
             visibleSections.has("footer-section")
               ? "opacity-100 translate-y-0 animate-staggered-fade"
               : "opacity-0 translate-y-20"
@@ -104,23 +115,42 @@ const Footer = () => {
           {/* Logo Section */}
           <div className="lg:col-span-2 md:col-span-2">
             <div className="mb-6">
-              <img
-                src="/logo/COZ_COMFORT_WHITE.png"
-                alt="COZ COMFORT Logo"
-                className="h-12 w-auto"
-              />
+              <a href="#home" className="inline-block cursor-pointer">
+                <img
+                  src="/logo/COZ_COMFORT_WHITE.png"
+                  alt="COZ COMFORT Logo"
+                  className="h-12 w-auto"
+                />
+              </a>
             </div>
-            <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-md">
-              Your trusted partner for premium industrial real estate solutions.
-              We help businesses find the perfect space to grow and thrive.
+            <p className="text-gray-400 text-base leading-relaxed mb-6 max-w-md">
+              Your trusted partner for comprehensive industrial infrastructure solutions.
+              From land acquisition to global expansion, we power your business growth.
             </p>
 
+            {/* Contact Info */}
+            <div className="space-y-3 mb-6">
+              <div className="flex items-center gap-2 text-gray-400 text-sm">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span>info@cozcomfort.com</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-400 text-sm">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>+1 (555) 123-4567</span>
+              </div>
+            </div>
+
             {/* Social Links */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
+                  aria-label={social.name}
                   className="w-10 h-10 bg-gray-800 border border-gray-700 text-gray-400 hover:bg-[#F37E3A] hover:text-white hover:border-[#F37E3A] rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 group"
                 >
                   {social.icon}
@@ -136,16 +166,18 @@ const Footer = () => {
               className="space-y-4"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <h3 className="font-semibold text-white text-lg tracking-wide mb-6">
+              <h3 className="font-semibold text-white text-lg tracking-wide mb-6 relative inline-block">
                 {section.title}
+                <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-[#F37E3A] -mb-2"></div>
               </h3>
               <ul className="space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <a
                       href={link.href}
-                      className="text-gray-400 hover:text-[#F37E3A] transition-all duration-300 text-sm hover:translate-x-2 inline-block"
+                      className="text-gray-400 hover:text-[#F37E3A] transition-all duration-300 text-sm hover:translate-x-2 inline-block group flex items-center gap-2"
                     >
+                      <span className="w-1 h-1 bg-gray-600 rounded-full group-hover:bg-[#F37E3A] transition-colors"></span>
                       {link.name}
                     </a>
                   </li>

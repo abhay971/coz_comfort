@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
 import Process from "./components/Process/Process";
+import Offerings from "./components/Offerings/Offerings";
 import Features from "./components/Features/Features";
 import Properties from "./components/Properties/Properties";
 import Contact from "./components/Contact/Contact";
@@ -15,6 +16,7 @@ function App() {
       <Hero />
       <About />
       <Process />
+      <Offerings />
       {/* <Features /> */}
       <Properties />
       <Contact />
