@@ -41,11 +41,16 @@ const Hero = () => {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="absolute top-8 left-8 md:left-12 lg:left-16 z-20"
       >
-        <img
-          src="/logo/COZ_COMFORT_WHITE.png"
-          alt="COZ COMFORT Logo"
-          className="h-12 md:h-14 lg:h-16 w-auto"
-        />
+        <div className="flex flex-col">
+          <img
+            src="/logo/COZ_COMFORT_WHITE.png"
+            alt="COZ COMFORT Logo"
+            className="h-12  w-auto"
+          />
+          <span className="text-white tracking-wide font-bold mt-1">
+            CLUB of Industrial Infra
+          </span>
+        </div>
       </motion.div>
 
       {/* Main Content */}
@@ -72,7 +77,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black text-white mb-4 md:mb-6 lg:mb-8 leading-tight"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black text-white mb-4 md:mb-6 lg:mb-8 leading-tight"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Produce to Prosper
