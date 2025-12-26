@@ -79,14 +79,11 @@ export function Features({
   };
 
   return (
-    <section id="projects" className="relative py-20 md:py-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#288EC2]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#F37E3A]/5 rounded-full blur-3xl" />
+    <section id="projects" className="relative py-10 md:py-14 bg-white overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-10 relative z-10">
         {/* Section Header */}
-        <div className="mb-16 md:mb-20">
+        <div className="mb-12 md:mb-14">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

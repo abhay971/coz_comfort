@@ -6,10 +6,7 @@ export default function About() {
   const sectionRef = useRef(null);
 
   return (
-    <section id="about-section" className="relative py-20 md:py-32 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#F37E3A]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#288EC2]/5 rounded-full blur-3xl" />
+    <section id="about-section" className="relative py-20 md:py-16 bg-white overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10" ref={sectionRef}>
 
@@ -35,7 +32,7 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
           >
-            Club of{" "}
+            CLUB of{" "}
             <span className="text-[#F37E3A]">Industrial Infra</span>
           </motion.h2>
 
@@ -52,7 +49,7 @@ export default function About() {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 mb-20">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 ">
 
           {/* Left Column - Image */}
           <motion.div
@@ -89,12 +86,12 @@ export default function About() {
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                   Your Partner in Industrial Excellence
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  At COZ COMFORT, we don't just build structures—we create strategic
-                  industrial ecosystems designed to maximize efficiency, scalability, and ROI.
+                <p className="text-gray-600 justify-center text-justify leading-relaxed mb-6">
+                  We don't just build structures—we create strategic
+                  industrial ecosystems designed to maximize productivity, efficiency, and scalability.
                   Every square foot is engineered with your business growth in mind.
                 </p>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 justify-center text-justify leading-relaxed">
                   From initial site assessment to final handover, our comprehensive approach
                   ensures seamless project execution. We combine cutting-edge design with
                   proven construction methodologies to deliver world-class industrial facilities.
@@ -102,7 +99,7 @@ export default function About() {
               </div>
 
               {/* Key Features */}
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   {
                     icon: Users,
@@ -150,38 +147,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Bottom Statement */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center max-w-4xl mx-auto"
-        >
-          <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden">
-            {/* Background pattern */}
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute inset-0" style={{
-                backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-                backgroundSize: '40px 40px'
-              }} />
-            </div>
-
-            <div className="relative z-10">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Industry 360° Approach
-              </h3>
-              <p className="text-gray-300 text-lg leading-relaxed">
-                We provide complete visibility and control over every aspect of your industrial
-                project—from land acquisition and permits to construction and commissioning.
-                Your success is our blueprint.
-              </p>
-            </div>
-
-            {/* Accent corner */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#F37E3A] opacity-10 rounded-bl-full" />
-          </div>
-        </motion.div>
       </div>
     </section>
   );

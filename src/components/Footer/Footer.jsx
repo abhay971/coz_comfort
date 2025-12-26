@@ -27,34 +27,35 @@ const Footer = () => {
 
   const footerSections = [
     {
+      title: "Process",
+      links: [
+        { name: "Real Estate Acquisition", href: "#process" },
+        { name: "Design & Development", href: "#process" },
+        { name: "Planning & Procurement", href: "#process" },
+        { name: "Operations Management", href: "#process" },
+        { name: "Sales & Lease Management", href: "#process" },
+      ],
+    },
+    {
+      title: "Projects",
+      links: [
+        { name: "Industrial Parks", href: "#projects" },
+        { name: "Production Houses", href: "#projects" },
+        { name: "Distribution Centers", href: "#projects" },
+        // { name: "Industrial Park", href: "#projects" },
+      ],
+    },
+    {
       title: "Quick Links",
       links: [
         { name: "About Us", href: "#about-section" },
-        { name: "Our Process", href: "#process" },
-        { name: "Offerings", href: "#offerings" },
-        { name: "Projects", href: "#projects" },
-        { name: "Contact", href: "#contact" },
+        { name: "Pivacy Policy", href: "#" },
+        { name: "Terms of Service", href: "#" },
+        // { name: "Contact", href: "#contact" },
       ],
     },
-    {
-      title: "Our Services",
-      links: [
-        { name: "Compliance Management", href: "#offerings" },
-        { name: "Amenities Management", href: "#offerings" },
-        { name: "Facilities Management", href: "#offerings" },
-        { name: "Warehousing & Distribution", href: "#offerings" },
-        { name: "Global Business Expansion", href: "#offerings" },
-      ],
-    },
-    {
-      title: "Project Types",
-      links: [
-        { name: "Manufacturing Hub", href: "#projects" },
-        { name: "Warehouse Complex", href: "#projects" },
-        { name: "Distribution Center", href: "#projects" },
-        { name: "Industrial Park", href: "#projects" },
-      ],
-    },
+    
+    
   ];
 
   const socialLinks = [
@@ -93,55 +94,47 @@ const Footer = () => {
       ref={(el) => (sectionsRef.current[0] = el)}
       className="bg-gray-900 text-gray-300 py-16 relative overflow-hidden"
     >
-      {/* Dark subtle background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="w-full h-full"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 20% 50%, rgba(243, 126, 58, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(40, 142, 194, 0.1) 0%, transparent 50%)",
-          }}
-        ></div>
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 transition-all duration-1000 ${
+          className={`flex flex-wrap justify-between gap-y-8 transition-all duration-1000 ${
             visibleSections.has("footer-section")
               ? "opacity-100 translate-y-0 animate-staggered-fade"
               : "opacity-0 translate-y-20"
           }`}
         >
           {/* Logo Section */}
-          <div className="lg:col-span-2 md:col-span-2">
+          <div className="flex-shrink-0">
             <div className="mb-6">
-              <a href="#home" className="inline-block cursor-pointer">
+              <a href="#home" className="inline-flex flex-col cursor-pointer">
                 <img
                   src="/logo/COZ_COMFORT_WHITE.png"
                   alt="COZ COMFORT Logo"
                   className="h-12 w-auto"
                 />
+                <span className="text-gray-300 tracking-wide font-bold mb-6 text-sm sm:text-base">
+                  CLUB of Industrial Infra
+                </span>
               </a>
             </div>
-            <p className="text-gray-400 text-base leading-relaxed mb-6 max-w-md">
+            {/* <p className="text-gray-400 text-base leading-relaxed mb-6 max-w-md">
               Your trusted partner for comprehensive industrial infrastructure solutions.
               From land acquisition to global expansion, we power your business growth.
-            </p>
+            </p> */}
 
             {/* Contact Info */}
             <div className="space-y-3 mb-6">
-              <div className="flex items-center gap-2 text-gray-400 text-sm">
+              {/* <div className="flex items-center gap-2 text-gray-400 text-sm">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 <span>info@cozcomfort.com</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-400 text-sm">
+              </div> */}
+              {/* <div className="flex items-center gap-2 text-gray-400 text-sm">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <span>+1 (555) 123-4567</span>
-              </div>
+              </div> */}
             </div>
 
             {/* Social Links */}
@@ -163,37 +156,110 @@ const Footer = () => {
           {footerSections.map((section, index) => (
             <div
               key={index}
-              className="space-y-4"
+              className="space-y-4 flex-shrink-0"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <h3 className="font-semibold text-white text-lg tracking-wide mb-6 relative inline-block">
-                {section.title}
-                <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-[#F37E3A] -mb-2"></div>
-              </h3>
-              <ul className="space-y-3">
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <a
-                      href={link.href}
-                      className="text-gray-400 hover:text-[#F37E3A] transition-all duration-300 text-sm hover:translate-x-2 inline-block group flex items-center gap-2"
-                    >
-                      <span className="w-1 h-1 bg-gray-600 rounded-full group-hover:bg-[#F37E3A] transition-colors"></span>
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              {section.title === "Process" ? (
+                <>
+                  <h3 className="font-semibold text-white text-lg tracking-wide mb-6 relative inline-block w-full text-center">
+                    {section.title}
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-[#F37E3A] -mb-2"></div>
+                  </h3>
+                  <div className="grid grid-cols-2 gap-x-2 gap-y-3">
+                    {section.links.map((link, linkIndex) => (
+                      <a
+                        key={linkIndex}
+                        href={link.href}
+                        className={`text-gray-400 hover:text-[#F37E3A] transition-all duration-300 text-sm group flex items-start gap-2 ${
+                          linkIndex === 4 ? 'col-span-2 justify-center' : ''
+                        }`}
+                      >
+                        <span className="w-1 h-1 bg-gray-600 rounded-full group-hover:bg-[#F37E3A] transition-colors flex-shrink-0 mt-1.5"></span>
+                        <span>{link.name}</span>
+                      </a>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <h3 className="font-semibold text-white text-lg tracking-wide mb-6 relative inline-block">
+                    {section.title}
+                    <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-[#F37E3A] -mb-2"></div>
+                  </h3>
+                  <ul className="space-y-3">
+                    {section.links.map((link, linkIndex) => (
+                      <li key={linkIndex}>
+                        <a
+                          href={link.href}
+                          className="text-gray-400 hover:text-[#F37E3A] transition-all duration-300 text-sm hover:translate-x-2 inline-block group flex items-center gap-2"
+                        >
+                          <span className="w-1 h-1 bg-gray-600 rounded-full group-hover:bg-[#F37E3A] transition-colors"></span>
+                          {link.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
           ))}
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-16 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-gray-500 text-sm">
-              © 2024 COZ COMFORT. All Rights Reserved.
+        {/* Global Offices Section */}
+        <div className="mt-12 pt-8 border-t border-gray-800">
+          <h3 className="font-semibold text-white text-xl tracking-wide mb-8 text-center relative inline-block left-1/2 -translate-x-1/2">
+            Our Offices
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-0.5 bg-[#F37E3A] -mb-2"></div>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+            {/* India Office */}
+            <div className="text-center group">
+              <div className="inline-flex items-center justify-center gap-2 mb-3">
+                <div className="w-2 h-2 rounded-full bg-[#F37E3A]"></div>
+                <span className="text-base font-bold text-[#F37E3A] uppercase tracking-wide">India</span>
+              </div>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                5 Laxmi Soc, OP Road,<br />
+                Vadodara - 07, Gujarat, INDIA.
+              </p>
             </div>
-            <div className="flex flex-wrap justify-center gap-6">
+
+            {/* USA Office */}
+            <div className="text-center group">
+              <div className="inline-flex items-center justify-center gap-2 mb-3">
+                <div className="w-2 h-2 rounded-full bg-[#F37E3A]"></div>
+                <span className="text-base font-bold text-[#F37E3A] uppercase tracking-wide">USA</span>
+              </div>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                6313 Plumcreek Road,<br />
+                Frisco, Texas - 75036, USA.
+              </p>
+            </div>
+
+            {/* UAE Office */}
+            <div className="text-center group">
+              <div className="inline-flex items-center justify-center gap-2 mb-3">
+                <div className="w-2 h-2 rounded-full bg-[#F37E3A]"></div>
+                <span className="text-base font-bold text-[#F37E3A] uppercase tracking-wide">UAE</span>
+              </div>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Meydan FZ, 6th Floor,<br />
+                Al Meydan Rd, Dubai, UAE.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+            {/* Copyright */}
+            <div className="text-gray-500 text-sm order-1 lg:order-1">
+              © 2025 COZ COMFORT. All Rights Reserved.
+            </div>
+
+            {/* Privacy Links */}
+            {/* <div className="flex flex-wrap justify-center gap-6 order-3 lg:order-2">
               <a
                 href="#"
                 className="text-gray-500 hover:text-[#F37E3A] transition-all duration-300 text-sm"
@@ -206,13 +272,23 @@ const Footer = () => {
               >
                 Terms of Service
               </a>
-              <a
-                href="#"
-                className="text-gray-500 hover:text-[#F37E3A] transition-all duration-300 text-sm"
-              >
-                Cookie Policy
-              </a>
-            </div>
+            </div> */}
+
+            {/* COZ CLUB Company Logo */}
+            <a
+              href="https://www.cozclub.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 order-2 lg:order-3"
+            >
+              <span className="text-white text-lg sm:text-xl md:text-2xl font-bold">A</span>
+              <img
+                src="/logo/footer_logo.png"
+                alt="COZ CLUB"
+                className="h-8 w-auto hover:scale-110 transition-transform duration-300"
+              />
+              <span className="text-white text-lg sm:text-xl md:text-2xl font-bold">Company</span>
+            </a>
           </div>
         </div>
       </div>

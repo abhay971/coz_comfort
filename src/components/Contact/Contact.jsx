@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, Send, Crown, MessageCircle } from "lucide-react";
 import { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { isValidEmail, sanitizeInput } from "@/utils/security";
@@ -122,10 +122,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-20 md:py-32 bg-gradient-to-b from-white to-gray-50 overflow-hidden" ref={contactRef}>
-      {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#F37E3A]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#288EC2]/5 rounded-full blur-3xl" />
+    <section id="contact" className="relative py-10 md:py-16 bg-white overflow-hidden" ref={contactRef}>
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-10 relative z-10">
         {/* Section Header */}
@@ -148,7 +145,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+            className="text-3xl text-center sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
           >
             Get in Touch with Our{" "}
             <span className="text-[#F37E3A]">Industrial Experts</span>
@@ -159,12 +156,10 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl leading-relaxed"
+            className="text-base text-center sm:text-lg md:text-xl text-gray-600 max-w-7xl leading-tight"
           >
             Let our experts help you discover the ideal industrial property
-            that aligns with your business vision and operational
-            requirements. We're here to answer your questions and guide you
-            through every step.
+            that aligns with your business vision.
           </motion.p>
         </div>
 
@@ -176,7 +171,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6 md:space-y-8"
+            className="space-y-5 md:space-y-6"
           >
             {[
               {
@@ -186,16 +181,16 @@ export default function Contact() {
                 delay: 0.4,
               },
               {
+                icon: MessageCircle,
+                label: "WhatsApp",
+                value: "+1 (555) 123-4567",
+                delay: 0.45,
+              },
+              {
                 icon: Mail,
                 label: "Email",
                 value: "info@cozcomfort.com",
                 delay: 0.5,
-              },
-              {
-                icon: MapPin,
-                label: "Address",
-                value: "123 Industrial Blvd, Business District",
-                delay: 0.6,
               },
             ].map((item, index) => (
               <motion.div
@@ -204,7 +199,7 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: item.delay }}
-                className="flex items-start gap-4 p-4 md:p-5 rounded-2xl bg-white border border-gray-200 hover:border-[#F37E3A]/30 hover:shadow-lg transition-all duration-300 group"
+                className="flex items-start gap-4 p-5 md:p-6 rounded-2xl bg-white border border-gray-200 hover:border-[#F37E3A]/30 hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-[#F37E3A]/10 rounded-xl flex items-center justify-center group-hover:bg-[#F37E3A] transition-all duration-300">
                   <item.icon className="w-5 h-5 md:w-6 md:h-6 text-[#F37E3A] group-hover:text-white transition-colors duration-300" />
@@ -220,35 +215,34 @@ export default function Contact() {
               </motion.div>
             ))}
 
-            {/* Additional Info Card */}
+            {/* Availability Card */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="mt-8 p-6 md:p-8 rounded-3xl bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden"
+              transition={{ duration: 0.8, delay: 0.55 }}
+              className="p-6 md:p-8 rounded-2xl bg-white border-2 border-[#F37E3A] shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              {/* Background pattern */}
-              <div className="absolute inset-0 opacity-5">
-                <div className="absolute inset-0" style={{
-                  backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-                  backgroundSize: '40px 40px'
-                }} />
-              </div>
-
-              <div className="relative z-10">
-                <h3 className="text-xl md:text-2xl font-bold mb-3">
-                  Business Hours
+              {/* Availability Header with Crown Icon */}
+              <div className="flex items-center gap-2 mb-3">
+                <Crown className="w-5 h-5 md:w-6 md:h-6 text-[#F37E3A]" />
+                <h3 className="text-lg md:text-xl font-bold text-gray-900">
+                  Availability
                 </h3>
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-                  Monday - Friday: 9:00 AM - 6:00 PM<br />
-                  Saturday: 10:00 AM - 4:00 PM<br />
-                  Sunday: Closed
-                </p>
               </div>
 
-              {/* Accent corner */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-[#F37E3A] opacity-10 rounded-bl-full" />
+              {/* Green Badge */}
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-100 border-2 border-green-500 mb-3">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                <span className="text-green-700 font-semibold text-sm">
+                  We're Always Available
+                </span>
+              </div>
+
+              {/* Description Text */}
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Reach out anytime through any of our contact channels.
+              </p>
             </motion.div>
           </motion.div>
 
@@ -259,8 +253,8 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl border border-gray-200">
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 md:mb-8">
+            <div className="bg-white rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl border border-gray-200">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
                 Send us a Message
               </h3>
 
@@ -356,7 +350,7 @@ export default function Contact() {
                   )}
                 </div>
 
-                <div>
+                {/* <div>
                   <label htmlFor="propertyType" className="block text-sm font-medium text-gray-700 mb-2">
                     Property Type
                   </label>
@@ -373,7 +367,7 @@ export default function Contact() {
                     <option value="Distribution Center">Distribution Center</option>
                     <option value="Other">Other</option>
                   </select>
-                </div>
+                </div> */}
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
@@ -387,13 +381,13 @@ export default function Contact() {
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    rows="4"
+                    rows="3"
                     maxLength={1000}
                     required
                     aria-required="true"
                     aria-invalid={errors.message ? 'true' : 'false'}
                     aria-describedby={errors.message ? 'message-error' : undefined}
-                    className={`w-full px-4 py-3 md:py-3.5 bg-gray-50 border rounded-xl focus:outline-none focus:ring-2 focus:border-transparent transition-all resize-none text-sm md:text-base ${
+                    className={`w-full px-4 py-3 md:py-3.5 bg-gray-50 border rounded-xl focus:outline-none focus:ring-2 focus:border-transparent transition-all resize-y text-sm md:text-base ${
                       errors.message
                         ? 'border-red-300 focus:ring-red-500'
                         : 'border-gray-200 focus:ring-[#F37E3A]'

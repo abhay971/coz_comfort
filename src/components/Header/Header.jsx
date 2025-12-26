@@ -21,14 +21,17 @@ const Header = () => {
   return (
     <nav className="fixed w-full top-0 z-50 transition-all duration-500 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center py-1">
           <div className="flex items-center">
-            <a href="#home" className="cursor-pointer">
+            <a href="#home" className="cursor-pointer flex flex-col py-2">
               <img
                 src="/logo/COZ_COMFORT.png"
                 alt="COZ COMFORT Logo"
                 className="h-12 w-auto transition-opacity duration-500"
               />
+              <span className="font-bold text-gray-900 mt-1 tracking-wide">
+                CLUB of Industrial Infra
+              </span>
             </a>
           </div>
 
@@ -43,10 +46,6 @@ const Header = () => {
                 Process
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#F37E3A] group-hover:w-full transition-all duration-300"></div>
               </a>
-              <a href="#offerings" className="text-gray-800 hover:text-[#F37E3A] font-semibold tracking-wider uppercase text-sm transition-all duration-300 relative group">
-                Offerings
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#F37E3A] group-hover:w-full transition-all duration-300"></div>
-              </a>
               <a href="#projects" className="text-gray-800 hover:text-[#F37E3A] font-semibold tracking-wider uppercase text-sm transition-all duration-300 relative group">
                 Projects
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#F37E3A] group-hover:w-full transition-all duration-300"></div>
@@ -58,13 +57,13 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <a href="#contact">
               <button className="bg-gradient-to-r from-[#F37E3A] to-[#e66a2b] text-white px-6 lg:px-8 py-3 rounded-full font-medium tracking-wider uppercase hover:shadow-xl hover:shadow-[#F37E3A]/25 transition-all duration-300 transform hover:scale-105 text-sm">
                 Get Started
               </button>
             </a>
-          </div>
+          </div> */}
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -102,13 +101,6 @@ const Header = () => {
                 Process
               </a>
               <a
-                href="#offerings"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-gray-800 hover:text-[#F37E3A] hover:bg-gray-50 block px-4 py-3 text-base font-semibold tracking-wider uppercase transition-all duration-300 rounded-lg"
-              >
-                Offerings
-              </a>
-              <a
                 href="#projects"
                 onClick={() => setIsMenuOpen(false)}
                 className="text-gray-800 hover:text-[#F37E3A] hover:bg-gray-50 block px-4 py-3 text-base font-semibold tracking-wider uppercase transition-all duration-300 rounded-lg"
@@ -122,11 +114,11 @@ const Header = () => {
               >
                 Contact
               </a>
-              <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+              {/* <a href="#contact" onClick={() => setIsMenuOpen(false)}>
                 <button className="w-full bg-gradient-to-r from-[#F37E3A] to-[#e66a2b] text-white px-6 py-3 rounded-full font-medium tracking-wider uppercase hover:shadow-lg transition-all duration-300 transform hover:scale-105 mt-4">
                   Get Started
                 </button>
-              </a>
+              </a> */}
             </div>
           </div>
         )}
