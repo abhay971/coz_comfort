@@ -177,19 +177,19 @@ export default function Contact() {
               {
                 icon: Phone,
                 label: "Phone",
-                value: "+1 (555) 123-4567",
+                value: "+91 92741 66689",
                 delay: 0.4,
               },
               {
                 icon: MessageCircle,
                 label: "WhatsApp",
-                value: "+1 (555) 123-4567",
+                value: "+91 92741 66689",
                 delay: 0.45,
               },
               {
                 icon: Mail,
                 label: "Email",
-                value: "info@cozcomfort.com",
+                value: "contact@cozclub.com",
                 delay: 0.5,
               },
             ].map((item, index) => (
