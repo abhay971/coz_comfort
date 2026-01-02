@@ -156,7 +156,7 @@ const Footer = () => {
           {footerSections.map((section, index) => (
             <div
               key={index}
-              className="space-y-4 flex-shrink-0"
+              className="space-y-4 flex-shrink-0 self-start"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {section.title === "Process" ? (
@@ -191,7 +191,7 @@ const Footer = () => {
                       <li key={linkIndex}>
                         <a
                           href={link.href}
-                          className="text-gray-400 hover:text-[#F37E3A] transition-all duration-300 text-sm hover:translate-x-2 inline-block group flex items-center gap-2"
+                          className="text-gray-400 hover:text-[#F37E3A] transition-all duration-300 text-sm hover:translate-x-2 group flex items-center gap-2"
                         >
                           <span className="w-1 h-1 bg-gray-600 rounded-full group-hover:bg-[#F37E3A] transition-colors"></span>
                           {link.name}
@@ -206,12 +206,12 @@ const Footer = () => {
         </div>
 
         {/* Global Offices Section */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
+        <div className="mt-6 pt-8 border-t border-gray-800">
           <h3 className="font-semibold text-white text-xl tracking-wide mb-8 text-center relative inline-block left-1/2 -translate-x-1/2">
             Our Offices
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-0.5 bg-[#F37E3A] -mb-2"></div>
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-2">
             {/* India Office */}
             <div className="text-center group">
               <div className="inline-flex items-center justify-center gap-2 mb-3">

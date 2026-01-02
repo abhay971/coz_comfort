@@ -12,9 +12,10 @@ const processSteps = [
     image: "/Real-Estate .png",
     icon: Building,
     features: [
+      "Research",
       "Zoning & compliance verification",
-      "Negotiation & acquisition support",
       "Site identification & due diligence",
+      "Negotiation & acquisition support",
     ],
     detailedOffering: {
       title: "Global Business Expansion",

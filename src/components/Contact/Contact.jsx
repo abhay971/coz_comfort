@@ -77,7 +77,7 @@ export default function Contact() {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Validate form
@@ -95,30 +95,47 @@ export default function Contact() {
     };
 
     setIsSubmitting(true);
+    setSubmitStatus(null);
 
-    // TODO: Replace with actual API call
-    // Simulated submission for now
-    console.log('Form submitted with sanitized data:', sanitizedData);
+    try {
+      // API endpoint - uses proxy in development, full URL in production
+      const API_URL = import.meta.env.VITE_API_URL || '';
 
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-
-      // Reset form
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        propertyType: 'Manufacturing Facility',
-        message: ''
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(sanitizedData),
       });
 
-      // Clear success message after 5 seconds
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 5000);
-    }, 1000);
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSubmitStatus('success');
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          propertyType: 'Manufacturing Facility',
+          message: ''
+        });
+
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus(null);
+        }, 5000);
+      } else {
+        setSubmitStatus('error');
+        console.error('Form submission failed:', result.error);
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      console.error('Form submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -261,6 +278,12 @@ export default function Contact() {
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl text-green-800 text-sm">
                   Thank you! Your message has been sent successfully. We'll get back to you soon.
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl text-red-800 text-sm">
+                  Something went wrong. Please try again later or contact us directly.
                 </div>
               )}
 
